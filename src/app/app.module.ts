@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 import { TeamListComponent } from './teams/team-list/team-list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     TeamListComponent
   ],
   imports: [
