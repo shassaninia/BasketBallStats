@@ -22,14 +22,6 @@ import { NotFoundComponent } from './not-found.component'
     HttpModule,
     RouterModule.forRoot([
       {
-        path:'teams',
-        component:TeamListComponent
-      },
-      {
-        path:'players',
-        component:PlayerListComponent
-      },
-      {
         path: '',
         component:PlayerListComponent
       },
@@ -38,8 +30,9 @@ import { NotFoundComponent } from './not-found.component'
         component: NotFoundComponent
       }
     ]),
+     TeamsModule,
     PlayersModule,
-    TeamsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
