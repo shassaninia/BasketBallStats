@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import {PlayersModule} from './players/players.module';
 import {TeamsModule} from './teams/teams.module';
 import { AppComponent } from './app.component';
-import { TeamListComponent } from './teams/team-list/team-list.component';
 import { PlayerListComponent } from './players/player-list/player-list.component';
 import { NotFoundComponent } from './not-found.component'
 
