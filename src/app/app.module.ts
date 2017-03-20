@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
 import { PlayersModule } from './players/players.module';
-import { TeamsModule } from './teams/teams.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found.component'
 
@@ -20,7 +19,6 @@ import { NotFoundComponent } from './not-found.component'
     BrowserModule,
     FormsModule,
     HttpModule,
-    TeamsModule,
     PlayersModule,
     AppRoutingModule
 
