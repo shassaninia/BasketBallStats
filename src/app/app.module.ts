@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import {PlayersModule} from './players/players.module';
-import {TeamsModule} from './teams/teams.module';
+import { AppRoutingModule } from './app.routing';
+import { PlayersModule } from './players/players.module';
+import { TeamsModule } from './teams/teams.module';
 import { AppComponent } from './app.component';
-import { PlayerListComponent } from './players/player-list/player-list.component';
 import { NotFoundComponent } from './not-found.component'
+
 
 @NgModule({
   declarations: [
@@ -19,19 +20,10 @@ import { NotFoundComponent } from './not-found.component'
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component:PlayerListComponent
-      },
-      {
-        path: '**',
-        component: NotFoundComponent
-      }
-    ]),
-     TeamsModule,
+    TeamsModule,
     PlayersModule,
-   
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
