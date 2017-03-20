@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { TeamListComponent } from './team-list/team-list.component';
 import { TeamsRoutingModule } from "app/teams/teams.routing";
+import { CommonModule } from '../common/common.module';
 
 @NgModule({
     declarations:[TeamListComponent],
-    imports:[BrowserModule,FormsModule, TeamsRoutingModule]
+    imports:[BrowserModule,FormsModule, CommonModule,TeamsRoutingModule]
 })
 export class TeamsModule {}
