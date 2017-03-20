@@ -7,6 +7,10 @@ import { NotFoundComponent } from './not-found.component'
 
 const routes: Routes = [
     {
+        path:'teams',
+        loadChildren: 'app/teams/teams.module#TeamsModule'
+    },
+    {
         path: '',
         component: PlayerListComponent
     },
