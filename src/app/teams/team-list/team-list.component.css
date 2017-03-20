@@ -1,0 +1,15 @@
+
+
+.table-striped thead tr{
+    background:#232;
+    color:#fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd){
+    background: #006bb6;
+    color:#fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd):hover{
+    background: #0069ee;
+}
