@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Player } from "../../common/players/player";
-import { RestApiService } from "../../common/restapi.service";
+import { Player } from "../../shared/players/player";
+import { RestApiService } from "../../shared/restapi.service";
 
 @Component({
   selector: 'app-player-list',

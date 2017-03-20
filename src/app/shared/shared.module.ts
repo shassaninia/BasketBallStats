@@ -6,4 +6,4 @@ import { RestApiService } from './restapi.service'
     providers:[RestApiService]
 })
 
-export class CommonModule{}
+export class SharedModule{}
