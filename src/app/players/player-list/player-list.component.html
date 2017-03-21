@@ -12,7 +12,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let player of listOfPlayers">
+  <tr *ngFor="let player of listOfPlayers" (click)="selectPlayer(player)">
     <td>{{player.firstName}}</td>
     <td>{{player.lastName}}</td>
     <td>{{player.positon}}</td>
@@ -21,6 +21,10 @@
   </tr>
   </tbody>
 </table>
+<!-- ["selectedPlayer] is in the child componenet
+     The right hand side "selectedPlayer" comes from the parent  -->
+<app-player-profile [selectedPlayer]="selectedPlayer"></app-player-profile>
+
 <p>
   <a routerLink="/teams">Click here for teams</a>
 </p>
