@@ -7,13 +7,15 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { PlayersModule } from './players/players.module';
 import { AppComponent } from './app.component';
-import { NotFoundComponent } from './not-found.component'
+import { NotFoundComponent } from './not-found.component';
+import { MainNavigationComponent } from './main-navigation/main-navigation.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MainNavigationComponent
   ],
   imports: [
     BrowserModule,
