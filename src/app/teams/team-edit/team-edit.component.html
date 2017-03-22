@@ -2,7 +2,7 @@
   <h2>Edit Team</h2>
   <div class="form-group">
     <label for="teamName">Team Name</label>
-    <input type="text" class="form-control" value="{{selectedTeam.teamName}}" name="teamName" id="teamName" placeholder="Enter team name" />
+    <input type="text" class="form-control" [(ngModel)]="selectedTeam.teamName" name="teamName" id="teamName" placeholder="Enter team name" />
   </div>
   <div class="form-group">
     <label for="wins">Wins</label>
