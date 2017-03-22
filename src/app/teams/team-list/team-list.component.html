@@ -20,11 +20,11 @@
     <td>{{team.winPercentage}}</td>
     <td>{{team.gamesBehind}}</td>
     <td>
-      <a>
+      <a (click)="selectTeam(team)">
       <i class="fa fa-edit"></i>
       </a>
     </td>
   </tr>
   </tbody>
 </table>
-<app-team-edit></app-team-edit>
+<app-team-edit [selectedTeam]="selectedTeam"></app-team-edit>
