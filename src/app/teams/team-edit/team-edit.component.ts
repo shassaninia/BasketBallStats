@@ -10,4 +10,8 @@ import { Team } from '../../shared/teams/team';
 export class TeamEditComponent  {
   @Input()
   selectedTeam : Team;
+
+  saveTeam(){
+    this.selectedTeam = null;
+  }
 }

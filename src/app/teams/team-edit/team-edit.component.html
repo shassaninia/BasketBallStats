@@ -12,5 +12,5 @@
     <label for="losses">Losses</label>
     <input type="number" class="form-control" [(ngModel)]="selectedTeam.numberOfLosses" name="losses" id="losses" placeholder="Enter number of losses" />
   </div>
-  <button type="button" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-primary" (click)="saveTeam()">Submit</button>
 </form>
