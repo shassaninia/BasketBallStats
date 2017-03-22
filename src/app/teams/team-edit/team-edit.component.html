@@ -6,11 +6,11 @@
   </div>
   <div class="form-group">
     <label for="wins">Wins</label>
-    <input type="number" class="form-control" name="wins" id="wins" placeholder="Enter number of wins" />
+    <input type="number" class="form-control" [(ngModel)]="selectedTeam.numberOfWins" name="wins" id="wins" placeholder="Enter number of wins" />
   </div>
     <div class="form-group">
     <label for="losses">Losses</label>
-    <input type="number" class="form-control" name="losses" id="losses" placeholder="Enter number of losses" />
+    <input type="number" class="form-control" [(ngModel)]="selectedTeam.numberOfLosses" name="losses" id="losses" placeholder="Enter number of losses" />
   </div>
   <button type="button" class="btn btn-primary">Submit</button>
 </form>
