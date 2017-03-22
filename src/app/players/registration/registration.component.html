@@ -1,3 +1,125 @@
-<p>
-  registration works!
-</p>
+<h2>Register</h2>
+
+<form action="">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name" />
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name" />
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" />
+  </div>
+  <div class="form-group">
+    <label for="biography">Biography</label>
+    <textarea class="form-control" id="biography" name="biography" rows="5" placeholder="Enter biography"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="dob">DOB</label>
+    <input type="date" class="form-control" id="dob" name="dob" placeholder="Enter DOB" />
+  </div>
+  <div class="form-group">
+    <label for="teamId">Team</label>
+    <select id="teamId" class="form-control">
+        <option>Please Select...</option>
+        <option value="1">Atlanta Hawks</option>
+        <option value="2">Boston Celtics</option>
+        <option value="3">Charlotte Hornets</option>
+        <option value="4">Chicago Bulls</option>
+        <option value="5">Cleveland Cavaliers</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label for="heightInFeet">Height</label>
+    <div class="row">
+      <div class="col-xs-4 col-sm-2">
+        <input type="number" class="form-control" id="heightInFeet" placeholder="Enter in feet">
+      </div>
+      <div class="col-xs-1 height-label">
+        feet
+      </div>
+      <div class="col-xs-4 col-sm-2">
+        <input type="number" class="form-control" id="heightInInches" placeholder="Enter in inches">
+      </div>
+      <div class="col-xs-1 height-label">
+        inches
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="weight">Weight</label>
+    <div class="row">
+      <div class="col-xs-4 col-sm-2">
+        <input type="number" class="form-control" id="weight" placeholder="Enter in pounds">
+      </div>
+      <div class="col-xs-1 weight-label">
+        pounds
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+   <label for="pointGuard">Position</label>
+   <div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" id="pointGuard" value="PointGuard" />
+          Point Guard
+        </label>
+      </div>
+        <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="position" id="pointGuard" value="PointGuard" />
+          Shooting Guard
+        </label>
+      </div>
+        <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="position" id="smallForward" value="SmallForward" />
+          Small Forward
+        </label>
+      </div>
+        <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="position" id="powerForward" value="PowerFoward" />
+        Power Forward
+        </label>
+      </div>
+        <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="position" id="center" value="Center" />
+          Center
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+    <label for="brokenFoot">Past Injuries</label>
+   <div>
+     
+        <label class="form-check-inline">
+          <input type="checkbox" class="form-check-input" id="brokenFoot" value="Broken Foot" />
+          Broken Foot
+        </label>
+  
+     
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="kneeInjury" value="knee Injury" />
+          Knee Injury
+        </label>
+   
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="ankleInjury" value="Ankle Injury" />
+          Ankle Injury
+        </label>
+      </div>
+    </div>
+     <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" />
+  </div>
+  <button type="button" class="btn btn-default btn-primary">Submit</button>
+  </div>
+ 
+</form>
