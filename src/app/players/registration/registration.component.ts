@@ -14,6 +14,7 @@ export class RegistrationComponent implements OnInit {
   registrationViewModel : RegistrationViewModel;
   teamLookupList:TeamLookup[];
   injuryLookupList:string[];
+  injuryFieldList:string[];
 
   constructor(
     private injuryLookupService: InjuryLookupService,
@@ -25,23 +26,30 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(){
     this.teamLookupList = this.teamLookupService.getTeamsLookup();
     this.injuryLookupList = this.injuryLookupService.getInjuriesLookup();
+    this.initializeInjuryFieldList();
+  }
+
+
+  private initializeInjuryFieldList(){
+    this.injuryFieldList = [];
+
+    for(let injury of this.injuryLookupList){
+      this.injuryFieldList.push(injury.trim().replace(" ","").toLowerCase());
+    }
   }
 
   addOrRemoveInjury(value: string){
 
-    if(this.confirmInjuryNotAlreadyChosen(value))
+    var indexOfEntry = this.registrationViewModel.injuries.indexOf(value);
+
+    if(indexOfEntry < 0)
     {
         this.registrationViewModel.injuries.push(value);
     }
     else
     {
-      let index =  this.registrationViewModel.injuries.indexOf(value);
-      this.registrationViewModel.injuries.splice(index);
+      this.registrationViewModel.injuries.splice(indexOfEntry, 1);
     }
     
-  }
-
-  private confirmInjuryNotAlreadyChosen(value:string):boolean{
-    return this.registrationViewModel.injuries.find(injury => injury.toLowerCase() === value.toLowerCase()) == null;
   }
 }
