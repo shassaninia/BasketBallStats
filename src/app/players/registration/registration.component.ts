@@ -1,16 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { RegistrationViewModel } from "./registrationViewModel";
+import {TeamLookup} from '../../shared/lookup/team-lookup';
+import { InjuryLookupService } from '../../shared/lookup/injury-lookup.service';
+import { TeamLookupService } from '../../shared/lookup/team-lookup.service';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit {
   registrationViewModel : RegistrationViewModel;
-  constructor() { 
+  teamLookupList:TeamLookup[];
+  injuryLookupList:string[];
+
+  constructor(
+    private injuryLookupService: InjuryLookupService,
+    private teamLookupService: TeamLookupService
+  ) { 
     this.registrationViewModel = new RegistrationViewModel();
+  }
+
+  ngOnInit(){
+    this.teamLookupList = this.teamLookupService.getTeamsLookup();
+    this.injuryLookupList = this.injuryLookupService.getInjuriesLookup();
   }
 
   addOrRemoveInjury(value: string){
