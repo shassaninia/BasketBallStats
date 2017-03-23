@@ -3,27 +3,27 @@
 <form action="">
   <div class="form-group">
     <label for="firstName">First Name</label>
-    <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="registrationViewModel.firstName" placeholder="Enter first name" />
+    <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="registrationViewModel.firstName" placeholder="Enter first name" required />
   </div>
   <div class="form-group">
     <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="registrationViewModel.lastName"  placeholder="Enter last name" />
+    <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="registrationViewModel.lastName"  placeholder="Enter last name" required />
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="registrationViewModel.email"  placeholder="Enter email" />
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="registrationViewModel.email"  placeholder="Enter email" required />
   </div>
   <div class="form-group">
     <label for="biography">Biography</label>
-    <textarea class="form-control" id="biography" name="biography" [(ngModel)]="registrationViewModel.biography"  rows="5" placeholder="Enter biography"></textarea>
+    <textarea class="form-control" id="biography" name="biography" [(ngModel)]="registrationViewModel.biography"  rows="5" placeholder="Enter biography" required></textarea>
   </div>
   <div class="form-group">
     <label for="dob">DOB</label>
-    <input type="date" class="form-control" id="dob" name="dob" [(ngModel)]="registrationViewModel.dob"  placeholder="Enter DOB" />
+    <input type="date" class="form-control" id="dob" name="dob" [(ngModel)]="registrationViewModel.dob"  placeholder="Enter DOB" required />
   </div>
   <div class="form-group">
     <label for="teamId">Team</label>
-    <select id="teamId" class="form-control" name="teamId" [(ngModel)]="registrationViewModel.teamId" >
+    <select id="teamId" class="form-control" name="teamId" [(ngModel)]="registrationViewModel.teamId" required >
         <option>Please Select...</option>
         <option *ngFor="let team of teamLookupList" [value]="team.Id">{{team.Name}}</option>
       </select>
@@ -32,13 +32,13 @@
     <label for="heightInFeet">Height</label>
     <div class="row">
       <div class="col-xs-4 col-sm-2">
-        <input type="number" class="form-control" id="heightInFeet" name="heightInFeet" [(ngModel)]="registrationViewModel.heightInFeet"  placeholder="Enter in feet">
+        <input type="number" class="form-control" id="heightInFeet" name="heightInFeet" [(ngModel)]="registrationViewModel.heightInFeet" required  placeholder="Enter in feet">
       </div>
       <div class="col-xs-1 height-label">
         feet
       </div>
       <div class="col-xs-4 col-sm-2">
-        <input type="number" class="form-control" id="heightInInches" name="heightInInches" [(ngModel)]="registrationViewModel.heightInInches"  placeholder="Enter in inches">
+        <input type="number" class="form-control" id="heightInInches" name="heightInInches" [(ngModel)]="registrationViewModel.heightInInches"  required placeholder="Enter in inches">
       </div>
       <div class="col-xs-1 height-label">
         inches
@@ -49,7 +49,7 @@
     <label for="weight">Weight</label>
     <div class="row">
       <div class="col-xs-4 col-sm-2">
-        <input type="number" class="form-control" id="weight" name="weight" [(ngModel)]="registrationViewModel.weight"  placeholder="Enter in pounds">
+        <input type="number" class="form-control" id="weight" name="weight" [(ngModel)]="registrationViewModel.weight" required  placeholder="Enter in pounds">
       </div>
       <div class="col-xs-1 weight-label">
         pounds
@@ -61,7 +61,7 @@
    <div>
       <div class="form-check-inline">
         <label class="form-check-label">
-          <input type="radio" class="form-check-input" id="pointGuard" name="position" value="PointGuard" [(ngModel)]="registrationViewModel.position"  />
+          <input type="radio" class="form-check-input" id="pointGuard" name="position" value="PointGuard"  [(ngModel)]="registrationViewModel.position"  />
           Point Guard
         </label>
       </div>
@@ -103,7 +103,7 @@
     </div>
      <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="registrationViewModel.password"  placeholder="Enter password" />
+    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="registrationViewModel.password" required placeholder="Enter password" />
   </div>
   <button type="button" class="btn btn-default btn-primary">Submit</button>
   </div>
