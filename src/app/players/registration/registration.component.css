@@ -1,3 +1,29 @@
 .height-label, .weight-label{
     padding-top:5px;
 }
+
+input.ng-untouched, textarea.ng-untouched, select.ng-untouched {
+    border:3px solid blue;
+}
+
+input.ng-touched, textarea.ng-touched, select.ng-touched {
+    border:3px solid lightgrey;
+}
+
+input.ng-dirty, textarea.ng-dirty, select.ng-dirty {
+    background:#300;
+    color:#fff;
+}
+
+input.ng-pristine, textarea.ng-pristine, select.ng-pristine {
+    background:#dd0;
+    color:#000;
+}
+
+input.ng-dirty.ng-valid, textara.ng-dirty.ng-valid, select.ng-dirty.ng-valid{
+    border:5px solid lawngreen;
+}
+
+input.ng-dirty.ng-invalid, textara.ng-dirty.ng-invalid, select.ng-dirty.ng-invalid{
+    border:5px solid orangered;
+}
