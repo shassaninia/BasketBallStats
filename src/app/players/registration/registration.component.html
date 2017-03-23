@@ -1,29 +1,37 @@
 <h2>Register</h2>
 
-<form action="">
-  <div class="form-group">
+<form #registrationForm="ngForm">
+  <div class="form-group" [class.has-success]="firstName.dirty && firstName.valid" [class.has-danger]="firstName.dirty && firstName.invalid">
     <label for="firstName">First Name</label>
-    <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="registrationViewModel.firstName" placeholder="Enter first name" required />
+    <input type="text" class="form-control" [class.form-control-success]="firstName.dirty && firstName.valid" [class.form-control-danger]="firstName.dirty && firstName.invalid"
+      id="firstName" #firstName="ngModel" name="firstName" [(ngModel)]="registrationViewModel.firstName" placeholder="Enter first name"
+      required />
   </div>
-  <div class="form-group">
+  <div class="form-group" [class.has-success]="lastName.dirty && lastName.valid" [class.has-danger]="lastName.dirty && lastName.invalid">
     <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="registrationViewModel.lastName"  placeholder="Enter last name" required />
+    <input type="text" class="form-control" [class.form-control-success]="lastName.dirty && lastName.valid" [class.form-control-danger]="lastName.dirty && lastName.invalid"
+      id="lastName" name="lastName" [(ngModel)]="registrationViewModel.lastName" #lastName="ngModel" placeholder="Enter last name"
+      required />
   </div>
-  <div class="form-group">
+  <div class="form-group" [class.has-success]="email.dirty && email.valid" [class.has-danger]="email.dirty && email.invalid">
     <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="registrationViewModel.email"  placeholder="Enter email" required />
+    <input type="email" class="form-control" class="form-control" [class.form-control-success]="email.dirty && email.valid" [class.form-control-danger]="email.dirty && email.invalid"
+      id="email" name="email" [(ngModel)]="registrationViewModel.email" #email="ngModel" placeholder="Enter email" required
+    />
   </div>
-  <div class="form-group">
+  <div class="form-group"  [class.has-success]="biography.dirty && biography.valid" [class.has-danger]="biography.dirty && biography.invalid">
     <label for="biography">Biography</label>
-    <textarea class="form-control" id="biography" name="biography" [(ngModel)]="registrationViewModel.biography"  rows="5" placeholder="Enter biography" required></textarea>
+    <textarea class="form-control" #biography="ngModel"  [class.form-control-success]="biography.dirty && biography.valid" [class.form-control-danger]="biography.dirty && biography.invalid" id="biography" name="biography" [(ngModel)]="registrationViewModel.biography" rows="5" placeholder="Enter biography"
+      required></textarea>
   </div>
-  <div class="form-group">
+  <div class="form-group"  [class.has-success]="dob.dirty && dob.valid" [class.has-danger]="dob.dirty && dob.invalid">
     <label for="dob">DOB</label>
-    <input type="date" class="form-control" id="dob" name="dob" [(ngModel)]="registrationViewModel.dob"  placeholder="Enter DOB" required />
+    <input type="date" class="form-control" [class.form-control-success]="dob.dirty && dob.valid" [class.form-control-danger]="dob.dirty && dob.invalid" #dob="ngModel" id="dob" name="dob" [(ngModel)]="registrationViewModel.dob" placeholder="Enter DOB"
+      required />
   </div>
   <div class="form-group">
     <label for="teamId">Team</label>
-    <select id="teamId" class="form-control" name="teamId" [(ngModel)]="registrationViewModel.teamId" required >
+    <select id="teamId" class="form-control" name="teamId" [(ngModel)]="registrationViewModel.teamId" required>
         <option>Please Select...</option>
         <option *ngFor="let team of teamLookupList" [value]="team.Id">{{team.Name}}</option>
       </select>
@@ -31,14 +39,16 @@
   <div class="form-group">
     <label for="heightInFeet">Height</label>
     <div class="row">
-      <div class="col-xs-4 col-sm-2">
-        <input type="number" class="form-control" id="heightInFeet" name="heightInFeet" [(ngModel)]="registrationViewModel.heightInFeet" required  placeholder="Enter in feet">
+      <div class="col-xs-4 col-sm-2 form-group">
+        <input type="number" class="form-control" id="heightInFeet" name="heightInFeet" [(ngModel)]="registrationViewModel.heightInFeet"
+          required placeholder="Enter in feet">
       </div>
       <div class="col-xs-1 height-label">
         feet
       </div>
-      <div class="col-xs-4 col-sm-2">
-        <input type="number" class="form-control" id="heightInInches" name="heightInInches" [(ngModel)]="registrationViewModel.heightInInches"  required placeholder="Enter in inches">
+      <div class="col-xs-4 col-sm-2 form-group">
+        <input type="number" class="form-control" id="heightInInches" name="heightInInches" [(ngModel)]="registrationViewModel.heightInInches"
+          required placeholder="Enter in inches">
       </div>
       <div class="col-xs-1 height-label">
         inches
@@ -49,7 +59,7 @@
     <label for="weight">Weight</label>
     <div class="row">
       <div class="col-xs-4 col-sm-2">
-        <input type="number" class="form-control" id="weight" name="weight" [(ngModel)]="registrationViewModel.weight" required  placeholder="Enter in pounds">
+        <input type="number" class="form-control" id="weight" name="weight" [(ngModel)]="registrationViewModel.weight" required placeholder="Enter in pounds">
       </div>
       <div class="col-xs-1 weight-label">
         pounds
@@ -57,33 +67,33 @@
     </div>
   </div>
   <div class="form-group">
-   <label for="pointGuard">Position</label>
-   <div>
+    <label for="pointGuard">Position</label>
+    <div>
       <div class="form-check-inline">
         <label class="form-check-label">
           <input type="radio" class="form-check-input" id="pointGuard" name="position" value="PointGuard"  [(ngModel)]="registrationViewModel.position"  />
           Point Guard
         </label>
       </div>
-        <div class="form-check-inline">
+      <div class="form-check-inline">
         <label class="form-check-label">
           <input type="radio" class="form-check-input" name="position" id="pointGuard" value="PointGuard"  [(ngModel)]="registrationViewModel.position" />
           Shooting Guard
         </label>
       </div>
-        <div class="form-check-inline">
+      <div class="form-check-inline">
         <label class="form-check-label">
           <input type="radio" class="form-check-input" name="position" id="smallForward" value="SmallForward"  [(ngModel)]="registrationViewModel.position" />
           Small Forward
         </label>
       </div>
-        <div class="form-check-inline">
+      <div class="form-check-inline">
         <label class="form-check-label">
           <input type="radio" class="form-check-input" name="position" id="powerForward" value="PowerFoward"  [(ngModel)]="registrationViewModel.position" />
         Power Forward
         </label>
       </div>
-        <div class="form-check-inline">
+      <div class="form-check-inline">
         <label class="form-check-label">
           <input type="radio" class="form-check-input" name="position" id="center" value="Center"  [(ngModel)]="registrationViewModel.position" />
           Center
@@ -91,9 +101,9 @@
       </div>
     </div>
     <div class="form-group">
-    <label for="brokenFoot">Past Injuries</label>
-   <div>
-     
+      <label for="brokenFoot">Past Injuries</label>
+      <div>
+
         <label *ngFor="let injury of injuryLookupList; let i = index;" class="form-check-inline">
           <input type="checkbox" class="form-check-input" [name]="injuryFieldList[i]" [id]="injuryFieldList[i]" [value]="injury" (change)="addOrRemoveInjury($event.target.value)" />
           {{injury}}
@@ -101,11 +111,12 @@
 
       </div>
     </div>
-     <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="registrationViewModel.password" required placeholder="Enter password" />
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="registrationViewModel.password" required
+        placeholder="Enter password" />
+    </div>
+    <button type="button" class="btn btn-default btn-primary" [disabled]="registrationForm.invalid">Submit</button>
   </div>
-  <button type="button" class="btn btn-default btn-primary">Submit</button>
-  </div>
- 
+
 </form>
