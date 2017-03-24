@@ -6,6 +6,10 @@
     <input type="text" class="form-control" [class.form-control-success]="firstName.dirty && firstName.valid" [class.form-control-danger]="firstName.dirty && firstName.invalid"
       id="firstName" #firstName="ngModel" name="firstName" [(ngModel)]="registrationViewModel.firstName" placeholder="Enter first name"
       required />
+
+      <div *ngIf="firstName.dirty && firstName.invalid" class="alert alert-danger">
+        First name is required.
+      </div>
   </div>
   <div class="form-group" [class.has-success]="lastName.dirty && lastName.valid" [class.has-danger]="lastName.dirty && lastName.invalid">
     <label for="lastName">Last Name</label>
