@@ -65,4 +65,34 @@ export class RegistrationComponent implements OnInit {
     'position':'',
     'password':''
   };
+
+  private validationMessages = {
+    'firstName':{
+      'required':'First name is required'
+    },
+    'lastName':{
+      'required':'Last name is required'
+    },
+    'email':{
+      'required':'Email is required'
+    },
+    'dob':{
+      'required':'DOB  is required'
+    },
+    'teamId':{
+      'required':'Team is required'
+    },
+    'heightInFeet':{
+      'required':'Height In Feet  is required'
+    },
+    'heightInInches':{
+      'required':'Height In Inches is required'
+    },
+    'weight':{
+      'required':'Weight is required'
+    },
+    'password':{
+      'required':'Password is required'
+    }
+  };
 }
