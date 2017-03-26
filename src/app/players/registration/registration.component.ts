@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {NgForm} from '@angular/forms';
 import { RegistrationViewModel } from "./registrationViewModel";
 import {TeamLookup} from '../../shared/lookup/team-lookup';
 import { InjuryLookupService } from '../../shared/lookup/injury-lookup.service';
@@ -11,6 +11,7 @@ import { TeamLookupService } from '../../shared/lookup/team-lookup.service';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  @ViewChild("registrationForm") registrationForm : NgForm;
   registrationViewModel : RegistrationViewModel;
   teamLookupList:TeamLookup[];
   injuryLookupList:string[];
@@ -29,7 +30,9 @@ export class RegistrationComponent implements OnInit {
     this.initializeInjuryFieldList();
   }
 
-
+  ngAfterViewChecked(){
+    this.formChanged();
+  }
 
   addOrRemoveInjury(value: string){
 
@@ -44,6 +47,10 @@ export class RegistrationComponent implements OnInit {
       this.registrationViewModel.injuries.splice(indexOfEntry, 1);
     }
     
+  };
+
+  private formChanged(){
+
   }
 
     private initializeInjuryFieldList(){
