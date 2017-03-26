@@ -7,8 +7,8 @@
       id="firstName" name="firstName" [(ngModel)]="registrationViewModel.firstName" placeholder="Enter first name"
       required />
 
-      <div *ngIf="true" class="alert alert-danger">
-        First name is required.
+      <div *ngIf="formErrors.firstName" class="alert alert-danger">
+        {{formErrors.firstName}}
       </div>
   </div>
   <div class="form-group">
@@ -16,22 +16,32 @@
     <input type="text" class="form-control"
       id="lastName" name="lastName" [(ngModel)]="registrationViewModel.lastName"  placeholder="Enter last name"
       required />
+       <div *ngIf="formErrors.lastName" class="alert alert-danger">
+        {{formErrors.lastName}}
+      </div>
   </div>
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control" class="form-control"
       id="email" name="email" [(ngModel)]="registrationViewModel.email" placeholder="Enter email" required
     />
+     <div *ngIf="formErrors.email" class="alert alert-danger">
+        {{formErrors.email}}
+      </div>
   </div>
   <div class="form-group">
     <label for="biography">Biography</label>
     <textarea class="form-control"  [(ngModel)]="registrationViewModel.biography" name="biography"  rows="5" placeholder="Enter biography"
       required></textarea>
+
   </div>
   <div class="form-group">
     <label for="dob">DOB</label>
     <input type="date" class="form-control"  id="dob" name="dob" [(ngModel)]="registrationViewModel.dob" placeholder="Enter DOB"
       required />
+       <div *ngIf="formErrors.dob" class="alert alert-danger">
+        {{formErrors.dob}}
+      </div>
   </div>
   <div class="form-group">
     <label for="teamId">Team</label>
@@ -39,20 +49,29 @@
         <option>Please Select...</option>
         <option *ngFor="let team of teamLookupList" [value]="team.Id">{{team.Name}}</option>
       </select>
+       <div *ngIf="formErrors.teamId" class="alert alert-danger">
+        {{formErrors.teamId}}
+      </div>
   </div>
   <div class="form-group">
     <label for="heightInFeet">Height</label>
     <div class="row">
       <div class="col-xs-4 col-sm-2 form-group">
         <input type="number" class="form-control" name="heightInFeet" [(ngModel)]="registrationViewModel.heightInFeet" class="form-control"
-          required placeholder="Enter in feet">
+          required placeholder="Enter in feet"/>
+           <div *ngIf="formErrors.heightInFeet" class="alert alert-danger">
+        {{formErrors.heightInFeet}}
+      </div>
       </div>
       <div class="col-xs-1 height-label">
         feet
       </div>
       <div class="col-xs-4 col-sm-2 form-group">
         <input type="number" class="form-control" name="heightInInches" [(ngModel)]="registrationViewModel.heightInInches" class="form-control"
-          required placeholder="Enter in inches">
+          required placeholder="Enter in inches"/>
+           <div *ngIf="formErrors.heightInInches" class="alert alert-danger">
+        {{formErrors.heightInInches}}
+      </div>
       </div>
       <div class="col-xs-1 height-label">
         inches
@@ -63,7 +82,10 @@
     <label for="weight">Weight</label>
     <div class="row">
       <div class="col-xs-4 col-sm-2">
-        <input type="number" class="form-control" class="form-control" id="weight" name="weight" [(ngModel)]="registrationViewModel.weight" required placeholder="Enter in pounds">
+        <input type="number" class="form-control" class="form-control" id="weight" name="weight" [(ngModel)]="registrationViewModel.weight" required placeholder="Enter in pounds"/>
+         <div *ngIf="formErrors.weight" class="alert alert-danger">
+        {{formErrors.weight}}
+      </div>
       </div>
       <div class="col-xs-1 weight-label">
         pounds
@@ -119,6 +141,9 @@
       <label for="password">Password</label>
       <input type="password" class="form-control" class="form-control" id="password" name="password" [(ngModel)]="registrationViewModel.password" required
         placeholder="Enter password" />
+         <div *ngIf="formErrors.password" class="alert alert-danger">
+        {{formErrors.password}}
+      </div>
     </div>
     <button type="button" class="btn btn-default btn-primary" [disabled]="registrationForm.invalid">Submit</button>
   </div>

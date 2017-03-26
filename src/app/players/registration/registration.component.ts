@@ -30,13 +30,6 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  private initializeInjuryFieldList(){
-    this.injuryFieldList = [];
-
-    for(let injury of this.injuryLookupList){
-      this.injuryFieldList.push(injury.trim().replace(" ","").toLowerCase());
-    }
-  }
 
   addOrRemoveInjury(value: string){
 
@@ -52,4 +45,24 @@ export class RegistrationComponent implements OnInit {
     }
     
   }
+
+    private initializeInjuryFieldList(){
+    this.injuryFieldList = [];
+
+    for(let injury of this.injuryLookupList){
+      this.injuryFieldList.push(injury.trim().replace(" ","").toLowerCase());
+    }
+  }
+
+  private formErrors = {
+    'firstName':'',
+    'lastName':'',
+    'email':'',
+    'dob':'',
+    'heightInFeet':'',
+    'heightInInches':'',
+    'weight':'',
+    'position':'',
+    'password':''
+  };
 }
